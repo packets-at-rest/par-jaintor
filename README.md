@@ -18,3 +18,10 @@ Minimum=100   # Minimum space below which files will be deleted (MB)
 DeleteTo=200  # Delete files until this value is reached (MB)
 NumtoDel=25  # Number of files to delete between each free disk space check
 ```
+
+## CronJobs
+
+```
+*/5 * * * * /usr/local/bin/ruby /opt/packets-at-rest/bin/filer  > /dev/null 2>&1
+* * * * * /opt/bin/janitor.sh  > /dev/null 2>&1
+```
